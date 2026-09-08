@@ -1,0 +1,292 @@
+- generic [ref=f14e2]:
+  - list [ref=f14e4]:
+    - listitem [ref=f14e5]:
+      - link [ref=f14e6] [cursor=pointer]:
+        - /url: https://www.getweave.com/
+        - img "Weave" [ref=f14e7]
+    - listitem [ref=f14e8]:
+      - link "Back to Weave’s Job Listings" [ref=f14e9] [cursor=pointer]:
+        - /url: /weave
+    - listitem
+  - generic [ref=f14e12]:
+    - heading "Senior Frontend Engineer" [level=1] [ref=f14e14]
+    - generic [ref=f14e15]:
+      - generic [ref=f14e16]:
+        - generic [ref=f14e17]:
+          - heading "Location" [level=2] [ref=f14e18]
+          - paragraph [ref=f14e19]: India
+        - generic [ref=f14e20]:
+          - heading "Employment Type" [level=2] [ref=f14e21]
+          - paragraph [ref=f14e22]: Full time
+        - generic [ref=f14e23]:
+          - heading "Location Type" [level=2] [ref=f14e24]
+          - paragraph [ref=f14e25]: Remote
+        - generic [ref=f14e26]:
+          - heading "Department" [level=2] [ref=f14e27]
+          - paragraph [ref=f14e28]: Technology
+      - generic [ref=f14e29]:
+        - tablist [ref=f14e30]:
+          - tab "Overview" [ref=f14e31] [cursor=pointer]
+          - tab "Application" [selected] [ref=f14e32] [cursor=pointer]
+        - tabpanel "Application" [ref=f14e34]:
+          - generic [ref=f14e56]:
+            - button "Choose File" [ref=f14e57]
+            - generic [ref=f14e59]:
+              - heading "Autofill from resume" [level=3] [ref=f14e64]
+              - paragraph [ref=f14e65]: Upload your resume here to autofill key application fields.
+              - button "Upload file" [ref=f14e67] [cursor=pointer]
+          - generic [ref=f14e69]:
+            - generic [ref=f14e70]:
+              - generic [ref=f14e71]: Name*
+              - textbox "Name*" [ref=f14e73] [cursor=pointer]:
+                - /placeholder: Type here...
+            - generic [ref=f14e74]:
+              - generic [ref=f14e75]: Email*
+              - textbox "Email*" [ref=f14e77] [cursor=pointer]:
+                - /placeholder: hello@example.com...
+            - generic [ref=f14e78]:
+              - generic [ref=f14e79]: Resume*
+              - button "Resume*" [ref=f14e80]
+              - generic [ref=f14e81]:
+                - button "Upload File" [ref=f14e82] [cursor=pointer]
+                - paragraph [ref=f14e86]: or drag and drop here
+            - generic [ref=f14e87]:
+              - generic [ref=f14e88]: Phone Number*
+              - textbox "Phone Number*" [ref=f14e89] [cursor=pointer]:
+                - /placeholder: 1-415-555-1234...
+              - generic [ref=f14e90]:
+                - generic [ref=f14e93]
+                - generic [ref=f14e99]
+            - generic [ref=f14e114]:
+              - generic [ref=f14e115]: Do you have a preferred name?
+              - textbox "Do you have a preferred name?" [ref=f14e117] [cursor=pointer]:
+                - /placeholder: Type here...
+            - generic [ref=f14e118]:
+              - generic [ref=f14e119]: Are you related to anyone who currently works at Weave? If so, please list their name! (Please note this is not for referrals. If you would like to be referred, please reach out to the Weave employee directly)
+              - textbox "Are you related to anyone who currently works at Weave? If so, please list their name! (Please note this is not for referrals. If you would like to be referred, please reach out to the Weave employee directly)" [ref=f14e121] [cursor=pointer]:
+                - /placeholder: Type here...
+            - generic [ref=f14e122]:
+              - generic [ref=f14e123]: Are you a previous Weave employee?
+              - textbox "Are you a previous Weave employee?" [ref=f14e125] [cursor=pointer]:
+                - /placeholder: Type here...
+            - generic [ref=f14e126]:
+              - generic [ref=f14e127]: "Linked In Profile: *"
+              - 'textbox "Linked In Profile: *" [ref=f14e129] [cursor=pointer]':
+                - /placeholder: Type here...
+            - generic [ref=f14e130]:
+              - generic [ref=f14e131]: Location*
+              - generic [ref=f14e132]:
+                - combobox "Start typing..." [ref=f14e133] [cursor=pointer]
+                - button [ref=f14e134] [cursor=pointer]
+            - group [ref=f14e138]:
+              - generic [ref=f14e139]: How did you hear about us? *
+              - generic [ref=f14e140]:
+                - radio "LinkedIn" [ref=f14e143] [cursor=pointer]
+                - generic [ref=f14e144]: LinkedIn
+              - generic [ref=f14e145]:
+                - radio "Glassdoor" [ref=f14e148] [cursor=pointer]
+                - generic [ref=f14e149]: Glassdoor
+              - generic [ref=f14e150]:
+                - radio "Indeed" [ref=f14e153] [cursor=pointer]
+                - generic [ref=f14e154]: Indeed
+              - generic [ref=f14e155]:
+                - radio "I worked at Weave before!" [ref=f14e158] [cursor=pointer]
+                - generic [ref=f14e159]: I worked at Weave before!
+              - generic [ref=f14e160]:
+                - radio "Social Media" [ref=f14e163] [cursor=pointer]
+                - generic [ref=f14e164]: Social Media
+              - generic [ref=f14e165]:
+                - radio "I know someone that works at Weave" [ref=f14e168] [cursor=pointer]
+                - generic [ref=f14e169]: I know someone that works at Weave
+            - group [ref=f14e171]:
+              - generic [ref=f14e172]: How many years of experience do you have developing frontend applications?*
+              - generic [ref=f14e173]:
+                - radio "Less than 1 year" [ref=f14e176] [cursor=pointer]
+                - generic [ref=f14e177]: Less than 1 year
+              - generic [ref=f14e178]:
+                - radio "1-3 Years" [ref=f14e181] [cursor=pointer]
+                - generic [ref=f14e182]: 1-3 Years
+              - generic [ref=f14e183]:
+                - radio "4-6 years" [ref=f14e186] [cursor=pointer]
+                - generic [ref=f14e187]: 4-6 years
+              - generic [ref=f14e188]:
+                - radio "7-10 years" [ref=f14e191] [cursor=pointer]
+                - generic [ref=f14e192]: 7-10 years
+              - generic [ref=f14e193]:
+                - radio "10+ years" [ref=f14e196] [cursor=pointer]
+                - generic [ref=f14e197]: 10+ years
+            - group [ref=f14e199]:
+              - generic [ref=f14e200]: What percentage of your work is focused on frontend development versus backend development? (Select the option that best describes your experience.)*
+              - generic [ref=f14e201]:
+                - radio "100% Frontend – I work exclusively on frontend development." [ref=f14e204] [cursor=pointer]
+                - generic [ref=f14e205]: 100% Frontend – I work exclusively on frontend development.
+              - generic [ref=f14e206]:
+                - radio "80% Frontend / 20% Backend – Primarily frontend but with some backend responsibilities." [ref=f14e209] [cursor=pointer]
+                - generic [ref=f14e210]: 80% Frontend / 20% Backend – Primarily frontend but with some backend responsibilities.
+              - generic [ref=f14e211]:
+                - radio "60% Frontend / 40% Backend – Balanced but more focused on frontend work." [ref=f14e214] [cursor=pointer]
+                - generic [ref=f14e215]: 60% Frontend / 40% Backend – Balanced but more focused on frontend work.
+              - generic [ref=f14e216]:
+                - radio "50% Frontend / 50% Backend – Equal focus on frontend and backend development." [ref=f14e219] [cursor=pointer]
+                - generic [ref=f14e220]: 50% Frontend / 50% Backend – Equal focus on frontend and backend development.
+              - generic [ref=f14e221]:
+                - radio "30% Frontend / 70% Backend – Primarily backend with some frontend work." [ref=f14e224] [cursor=pointer]
+                - generic [ref=f14e225]: 30% Frontend / 70% Backend – Primarily backend with some frontend work.
+              - generic [ref=f14e226]:
+                - radio "10% Frontend / 90% Backend – Mostly backend with minimal frontend work." [ref=f14e229] [cursor=pointer]
+                - generic [ref=f14e230]: 10% Frontend / 90% Backend – Mostly backend with minimal frontend work.
+              - generic [ref=f14e231]:
+                - radio "0% Frontend – I exclusively work on backend development." [ref=f14e234] [cursor=pointer]
+                - generic [ref=f14e235]: 0% Frontend – I exclusively work on backend development.
+            - group [ref=f14e237]:
+              - generic [ref=f14e238]: Have you worked on frontend development with any of the following modern web frameworks? (Select all that apply):*
+              - generic [ref=f14e239]:
+                - checkbox "React" [ref=f14e243] [cursor=pointer]
+                - generic [ref=f14e244]: React
+              - generic [ref=f14e245]:
+                - checkbox "Angular" [ref=f14e249] [cursor=pointer]
+                - generic [ref=f14e250]: Angular
+              - generic [ref=f14e251]:
+                - checkbox "Vue" [ref=f14e255] [cursor=pointer]
+                - generic [ref=f14e256]: Vue
+              - generic [ref=f14e257]:
+                - checkbox "Other" [ref=f14e261] [cursor=pointer]
+                - generic [ref=f14e262]: Other
+            - group [ref=f14e264]:
+              - generic [ref=f14e265]: What is your current notice period?*
+              - generic [ref=f14e266]:
+                - radio "Immediate joiner" [ref=f14e269] [cursor=pointer]
+                - generic [ref=f14e270]: Immediate joiner
+              - generic [ref=f14e271]:
+                - radio "less than 30 days" [ref=f14e274] [cursor=pointer]
+                - generic [ref=f14e275]: less than 30 days
+              - generic [ref=f14e276]:
+                - radio "30-60 days" [ref=f14e279] [cursor=pointer]
+                - generic [ref=f14e280]: 30-60 days
+              - generic [ref=f14e281]:
+                - radio "60+ days" [ref=f14e284] [cursor=pointer]
+                - generic [ref=f14e285]: 60+ days
+            - generic [ref=f14e286]:
+              - generic [ref=f14e287]: What is your current total compensation (CTC)*
+              - paragraph [ref=f14e289]: (Please include base salary, variable pay/bonuses, and any stock/equity components.)
+              - textbox "What is your current total compensation (CTC)*" [ref=f14e291] [cursor=pointer]:
+                - /placeholder: Type here...
+            - generic [ref=f14e292]:
+              - generic [ref=f14e293]: What is your expected total compensation (CTC) for your next role?
+              - textbox "What is your expected total compensation (CTC) for your next role?" [ref=f14e295] [cursor=pointer]:
+                - /placeholder: Type here...
+            - generic [ref=f14e296]:
+              - generic [ref=f14e297]: Are there any compensation-related factors that are especially important to you?
+              - paragraph [ref=f14e299]: (e.g., fixed vs. variable ratio)
+              - textbox "Are there any compensation-related factors that are especially important to you?" [ref=f14e301] [cursor=pointer]:
+                - /placeholder: Type here...
+          - generic [ref=f14e304]:
+            - generic [ref=f14e305]:
+              - heading "Demographic Questions" [level=2] [ref=f14e306]
+              - generic [ref=f14e307]:
+                - paragraph [ref=f14e308]
+                - paragraph [ref=f14e310]
+            - group [ref=f14e314]:
+              - generic [ref=f14e315]: Which categories describe you? Select all that apply to you:*
+              - generic [ref=f14e316]:
+                - checkbox "American Indian or Alaska Native" [ref=f14e320] [cursor=pointer]
+                - generic [ref=f14e321]: American Indian or Alaska Native
+              - generic [ref=f14e322]:
+                - checkbox "Black/of African origin" [ref=f14e326] [cursor=pointer]
+                - generic [ref=f14e327]: Black/of African origin
+              - generic [ref=f14e328]:
+                - checkbox "East Asian (For example - Chinese, Korean, Japanese)" [ref=f14e332] [cursor=pointer]
+                - generic [ref=f14e333]: East Asian (For example - Chinese, Korean, Japanese)
+              - generic [ref=f14e334]:
+                - checkbox "Hispanic, Latinx or Spanish origin" [ref=f14e338] [cursor=pointer]
+                - generic [ref=f14e339]: Hispanic, Latinx or Spanish origin
+              - generic [ref=f14e340]:
+                - checkbox "Middle Eastern or North African" [ref=f14e344] [cursor=pointer]
+                - generic [ref=f14e345]: Middle Eastern or North African
+              - generic [ref=f14e346]:
+                - checkbox "Native Hawaiian or Other Pacific Islander" [ref=f14e350] [cursor=pointer]
+                - generic [ref=f14e351]: Native Hawaiian or Other Pacific Islander
+              - generic [ref=f14e352]:
+                - checkbox "South Asian (For example, Bangladeshi, Bhutanese, Indian)" [ref=f14e356] [cursor=pointer]
+                - generic [ref=f14e357]: South Asian (For example, Bangladeshi, Bhutanese, Indian)
+              - generic [ref=f14e358]:
+                - checkbox "Southeast Asian (For example, Filipino, Indonesian, Vietnamese)" [ref=f14e362] [cursor=pointer]
+                - generic [ref=f14e363]: Southeast Asian (For example, Filipino, Indonesian, Vietnamese)
+              - generic [ref=f14e364]:
+                - checkbox "Non-Hispanic White or Caucasian" [ref=f14e368] [cursor=pointer]
+                - generic [ref=f14e369]: Non-Hispanic White or Caucasian
+              - generic [ref=f14e370]:
+                - checkbox "I prefer to self describe" [ref=f14e374] [cursor=pointer]
+                - generic [ref=f14e375]: I prefer to self describe
+              - generic [ref=f14e376]:
+                - checkbox "I don't wish to answer" [ref=f14e380] [cursor=pointer]
+                - generic [ref=f14e381]: I don't wish to answer
+            - group [ref=f14e383]:
+              - generic [ref=f14e384]: How do you currently describe your gender identity? *
+              - generic [ref=f14e385]:
+                - radio "Woman, female or feminine" [ref=f14e388] [cursor=pointer]
+                - generic [ref=f14e389]: Woman, female or feminine
+              - generic [ref=f14e390]:
+                - radio "Transgender woman, female or feminine" [ref=f14e393] [cursor=pointer]
+                - generic [ref=f14e394]: Transgender woman, female or feminine
+              - generic [ref=f14e395]:
+                - radio "Man, male or masculine" [ref=f14e398] [cursor=pointer]
+                - generic [ref=f14e399]: Man, male or masculine
+              - generic [ref=f14e400]:
+                - radio "Transgender man, male, or masculine" [ref=f14e403] [cursor=pointer]
+                - generic [ref=f14e404]: Transgender man, male, or masculine
+              - generic [ref=f14e405]:
+                - radio "Non-binary/third gender (For example - bigender, gender non-conforming, androgynous)" [ref=f14e408] [cursor=pointer]
+                - generic [ref=f14e409]: Non-binary/third gender (For example - bigender, gender non-conforming, androgynous)
+              - generic [ref=f14e410]:
+                - radio "I don't wish to answer" [ref=f14e413] [cursor=pointer]
+                - generic [ref=f14e414]: I don't wish to answer
+              - generic [ref=f14e415]:
+                - radio "I prefer to self describe" [ref=f14e418] [cursor=pointer]
+                - generic [ref=f14e419]: I prefer to self describe
+            - group [ref=f14e421]:
+              - generic [ref=f14e422]: Do you consider yourself a member of the Lesbian, Gay or Bisexual (LGB) community? *
+              - generic [ref=f14e423]:
+                - radio "Yes" [ref=f14e426] [cursor=pointer]
+                - generic [ref=f14e427]: "Yes"
+              - generic [ref=f14e428]:
+                - radio "No" [ref=f14e431] [cursor=pointer]
+                - generic [ref=f14e432]: "No"
+              - generic [ref=f14e433]:
+                - radio "I don't wish to answer" [ref=f14e436] [cursor=pointer]
+                - generic [ref=f14e437]: I don't wish to answer
+            - group [ref=f14e439]:
+              - generic [ref=f14e440]: Do you identify as a military veteran or service member? *
+              - generic [ref=f14e441]:
+                - radio "Yes" [ref=f14e444] [cursor=pointer]
+                - generic [ref=f14e445]: "Yes"
+              - generic [ref=f14e446]:
+                - radio "No" [ref=f14e449] [cursor=pointer]
+                - generic [ref=f14e450]: "No"
+              - generic [ref=f14e451]:
+                - radio "I don't wish to answer" [ref=f14e454] [cursor=pointer]
+                - generic [ref=f14e455]: I don't wish to answer
+            - group [ref=f14e457]:
+              - generic [ref=f14e458]: Have you been diagnosed with any disability or impairment?*
+              - generic [ref=f14e459]:
+                - radio "Yes" [ref=f14e462] [cursor=pointer]
+                - generic [ref=f14e463]: "Yes"
+              - generic [ref=f14e464]:
+                - radio "No" [ref=f14e467] [cursor=pointer]
+                - generic [ref=f14e468]: "No"
+              - generic [ref=f14e469]:
+                - radio "I don't wish to answer" [ref=f14e472] [cursor=pointer]
+                - generic [ref=f14e473]: I don't wish to answer
+          - button "Submit Application" [ref=f14e474] [cursor=pointer]
+  - contentinfo [ref=f14e43]:
+    - link "Learn more about Ashby" [ref=f14e44] [cursor=pointer]:
+      - /url: https://www.ashbyhq.com
+      - generic [ref=f14e45]: Powered by
+      - img "Ashby" [ref=f14e46]
+    - paragraph [ref=f14e52]:
+      - link "Privacy Policy" [ref=f14e53] [cursor=pointer]:
+        - /url: https://www.ashbyhq.com/privacy
+      - link "Security" [ref=f14e54] [cursor=pointer]:
+        - /url: https://www.ashbyhq.com/security
+      - link "Vulnerability Disclosure" [ref=f14e55] [cursor=pointer]:
+        - /url: https://www.ashbyhq.com/disclosure

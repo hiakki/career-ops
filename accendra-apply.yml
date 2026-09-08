@@ -1,0 +1,109 @@
+- generic [ref=f20e1]:
+  - generic [ref=f20e4]:
+    - link [ref=f20e218] [cursor=pointer]:
+      - /url: ""
+      - text: Skip to main content
+    - banner [ref=f20e8]:
+      - generic [ref=f20e10]:
+        - link [ref=f20e219] [cursor=pointer]:
+          - /url: /en-US/AccendraCareers
+        - generic [ref=f20e17]:
+          - button [ref=f20e221] [cursor=pointer]:
+            - generic [ref=f20e24]: Sign In
+          - navigation [ref=f20e25]:
+            - button [ref=f20e222] [cursor=pointer]: Search for Jobs
+    - generic [ref=f20e30]:
+      - generic [ref=f20e31]:
+        - alert [ref=f20e32]: Senior Mobile Engineer page is loaded
+        - generic [ref=f20e33]:
+          - generic [ref=f20e35]:
+            - heading [level=2] [ref=f20e223]: Senior Mobile Engineer
+            - button [ref=f20e224] [cursor=pointer]: Apply
+          - generic [ref=f20e42]:
+            - generic [ref=f20e43]:
+              - generic [ref=f20e51]:
+                - term [ref=f20e52]: locations
+                - definition [ref=f20e53]: 3610 Accendra India
+              - generic [ref=f20e54]:
+                - generic [ref=f20e63]
+                - generic [ref=f20e74]
+                - generic [ref=f20e85]
+            - generic [ref=f20e89]:
+              - paragraph [ref=f20e90]: At Accendra Health, we understand that healthcare is complex, and we’re here to make it easier. We help deliver care beyond traditional settings, making essential products and services more accessible through every stage of life. As part of the care team, our teammates play a critical role in delivering personalized, long-term care for the patients we serve.
+              - paragraph [ref=f20e91]
+              - paragraph [ref=f20e92]: With deep expertise promoting health outside the hospital and a presence in communities nationwide through our Apria and Byram Healthcare brands, Accendra Health does more than just deliver the essentials.
+              - paragraph [ref=f20e93]
+              - paragraph [ref=f20e94]: If you’re interested in meaningful work with impact, explore our career opportunities and join us in our purpose of Bringing Care To Life™.
+              - paragraph [ref=f20e95]
+              - paragraph [ref=f20e96]
+              - paragraph [ref=f20e97]
+              - paragraph [ref=f20e98]: Senior Mobile Engineer
+              - paragraph [ref=f20e99]
+              - paragraph [ref=f20e100]: Accendra Health is seeking a highly skilled and motivated Mobile Engineer, to join our dynamic development team. In this role, you will be responsible for designing, developing, and maintaining complex mobile applications using modern JS and Native frameworks and Digital Experience Platforms. You will leverage your deep understanding of multiple form factors and mobile platforms to deliver exceptional user experiences and robust, scalable solutions. You will also play a key role in driving technical best practices and contributing to architectural decisions.
+              - paragraph [ref=f20e101]: "Responsibilities:"
+              - list [ref=f20e102]:
+                - listitem [ref=f20e103]
+                - listitem [ref=f20e111]
+              - paragraph [ref=f20e117]
+              - list [ref=f20e118]:
+                - listitem [ref=f20e119]
+                - listitem [ref=f20e126]
+              - paragraph [ref=f20e134]: "Qualifications:"
+              - list [ref=f20e135]:
+                - listitem [ref=f20e136]: Bachelor’s degree in computer science, Software Engineering, or a related field.
+                - listitem [ref=f20e137]: 7+ years of professional experience in mobile development.
+                - listitem [ref=f20e138]: Proficiency in Rest API, authentication and GraphQL.
+                - listitem [ref=f20e139]: Experience with front-end technologies and Server-side rendering (HTML, CSS, JavaScript, React, React Native, NextJS, Tailwind).
+                - listitem [ref=f20e140]: Experience with mobile platforms (iOS, Android).
+                - listitem [ref=f20e141]: Experience with CI/CD pipelines and DevOps practices.
+                - listitem [ref=f20e142]: Experience with mobile development building native or hybrid apps.
+              - paragraph [ref=f20e143]
+              - paragraph [ref=f20e144]: "Preferred Qualifications:"
+              - list [ref=f20e145]:
+                - listitem [ref=f20e146]: Experience with a Digital experience/CMS platform, Digital Asset Management (DAM)
+                - listitem [ref=f20e147]: Experience with headless architecture and GraphQL
+                - listitem [ref=f20e148]: Server-side rendering with NextJS/Vercel
+              - paragraph [ref=f20e149]: Work Location
+              - paragraph [ref=f20e150]: Pune, India – Hybrid preferred, Remote possible for the right candidate
+              - paragraph [ref=f20e151]
+              - paragraph [ref=f20e152]: Work Shifts
+              - paragraph [ref=f20e153]: The role is expected to have a significant overlap with the US time zones.
+              - paragraph [ref=f20e154]
+              - paragraph [ref=f20e155]: 2PM – 11PM IST
+              - paragraph [ref=f20e156]
+              - paragraph [ref=f20e157]
+              - paragraph [ref=f20e158]: If you feel this opportunity could be the next step in your career, we encourage you to apply.
+              - paragraph [ref=f20e159]
+              - paragraph [ref=f20e160]: Accendra is an Equal Opportunity Employer. All qualified applicants will receive consideration for employment without regard to race, color, national origin, sex, sexual orientation, genetic information, religion, disability, age, status as a veteran, or any other status prohibited by applicable national, federal, state or local law.
+              - paragraph [ref=f20e161]
+              - paragraph [ref=f20e162]: "Note: Accendra is not accepting unsolicited assistance from search firms for this employment opportunity. Please, no phone calls or emails. All resumes submitted by search firms to any employee at our Company via email, the Internet, or in any form and/or method without a valid written search agreement in place for this position will be deemed the sole property of our Company. No fee will be paid in the event the candidate is hired by our Company as a result of the referral or through other means."
+              - paragraph [ref=f20e163]
+              - paragraph [ref=f20e164]: "#AccendraHealth"
+      - generic [ref=f20e167]:
+        - heading [level=3] [ref=f20e225]: Welcome
+        - generic [ref=f20e170]:
+          - generic [aria-hidden] [ref=f20e172]:
+            - paragraph [aria-hidden] [ref=f20e173]: At Accendra Health, we understand that healthcare is complex, and we’re here to make it easier. We help deliver care beyond traditional settings, making essential products and services more accessible through every stage of life. As part of the care team, our teammates play a critical role in delivering personalized, long-term care for the patients we serve.
+            - paragraph [aria-hidden] [ref=f20e174]: With more than 6,000 teammates across a nationwide network of over 250 service locations across our Apria and Byram Healthcare brands, we have the reach and expertise to make home-based care work better for everyone.
+            - paragraph [aria-hidden] [ref=f20e175]: If you’re interested in meaningful work with impact, explore our career opportunities ─ from remote-friendly to hybrid and in-person roles ─ and join us in our purpose of Bringing Care To Life™.
+          - generic [ref=f20e176] [cursor=pointer]
+          - button [ref=f20e226] [cursor=pointer]:
+            - generic [ref=f20e179]: Read More
+    - generic [ref=f20e183]:
+      - heading [level=4] [ref=f20e227]: Follow Us
+      - list [ref=f20e185]:
+        - listitem [ref=f20e186] [cursor=pointer]:
+          - link [ref=f20e228]:
+            - /url: https://www.linkedin.com/company/accendra-health/
+      - link [ref=f20e229] [cursor=pointer]:
+        - /url: https://www.accendrahealth.com/Privacy-Policy
+        - text: "For details regarding Accendra Health privacy policy, please click this link:"
+      - generic [ref=f20e193]: © 2026 Workday, Inc. All rights reserved.
+  - dialog "Start Your Application" [ref=f20e233]:
+    - button "Close" [active] [ref=f20e235] [cursor=pointer]
+    - generic [ref=f20e241]:
+      - heading "Start Your Application" [level=2] [ref=f20e242]
+      - heading "Senior Mobile Engineer" [level=3] [ref=f20e243]
+      - button "Autofill with Resume" [ref=f20e247] [cursor=pointer]
+      - button "Apply Manually" [ref=f20e251] [cursor=pointer]
+      - button "Use My Last Application" [ref=f20e256] [cursor=pointer]

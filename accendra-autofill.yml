@@ -1,0 +1,48 @@
+- generic [ref=f21e4]:
+  - link "Skip to main content" [ref=f21e5] [cursor=pointer]:
+    - /url: ""
+  - banner [ref=f21e8]:
+    - generic [ref=f21e10]:
+      - link "search for jobs" [ref=f21e13] [cursor=pointer]:
+        - /url: /en-US/AccendraCareers
+        - img "search for jobs" [ref=f21e14]
+      - generic [ref=f21e15]:
+        - heading [level=1]
+      - generic [ref=f21e17]:
+        - button "Sign In" [ref=f21e19] [cursor=pointer]
+        - navigation [ref=f21e25]:
+          - button "Search for Jobs" [ref=f21e26] [cursor=pointer]
+  - main [ref=f21e67]:
+    - generic [ref=f21e68]:
+      - generic [ref=f21e69]:
+        - link "Back to Job Posting" [ref=f21e71] [cursor=pointer]
+        - heading "Senior Mobile Engineer" [level=2] [ref=f21e76]
+      - generic "Application Progress" [ref=f21e77]:
+        - list [ref=f21e78]:
+          - listitem [ref=f21e79]:
+            - generic: current step 1 of 6
+            - generic [ref=f21e85]: Create Account/Sign In
+          - listitem [ref=f21e86]:
+            - generic: step 2 of 6
+            - generic [ref=f21e92]: Autofill with Resume
+          - listitem [ref=f21e93]:
+            - generic: step 3 of 6
+            - generic [ref=f21e99]: My Information
+          - listitem [ref=f21e100]:
+            - generic: step 4 of 6
+            - generic [ref=f21e106]: My Experience
+          - listitem [ref=f21e107]:
+            - generic: step 5 of 6
+            - generic [ref=f21e113]: Voluntary Disclosures
+          - listitem [ref=f21e114]:
+            - generic: step 6 of 6
+            - generic [ref=f21e120]: Review
+  - generic [ref=f21e32]:
+    - heading "Follow Us" [level=4] [ref=f21e33]
+    - list [ref=f21e34]:
+      - listitem [ref=f21e35] [cursor=pointer]:
+        - link "LinkedIn" [ref=f21e36]:
+          - /url: https://www.linkedin.com/company/accendra-health/
+    - link "For details regarding Accendra Health privacy policy, please click this link:" [ref=f21e41] [cursor=pointer]:
+      - /url: https://www.accendrahealth.com/Privacy-Policy
+    - generic [ref=f21e42]: © 2026 Workday, Inc. All rights reserved.

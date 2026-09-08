@@ -1,0 +1,26 @@
+{
+  "candidate": {
+    "name": "Sneh Singh Chauhan",
+    "location": "Bangalore, India",
+    "email": "wrk.sneh@gmail.com",
+    "phone": "+91-6386418829",
+    "linkedin": "https://linkedin.com/in/hiSneh",
+    "github": "https://github.com/hiSneh"
+  },
+  "letter": {
+    "role_title": "Senior Frontend Engineer (L5) - Banking",
+    "company": "OpenFX",
+    "city": "Bengaluru",
+    "date": "8 September 2026",
+    "greeting": "Dear OpenFX Hiring Team,",
+    "opening": "I am applying for the Senior Frontend Engineer role because the mandate to build frontend as a platform closely matches the work I have led across scalable web, mobile, and real-time products.",
+    "profile_intro": "I bring 9+ years of frontend experience with React, TypeScript, state management, accessibility, performance, and end-to-end architecture ownership. At HARMAN, I designed a modular micro-frontend architecture with Rspack Module Federation and built shared foundations for React and React Native applications.",
+    "achievements": [
+      {"lead": "Reusable design systems", "impact": "Built a centralized component library covering forms, charts, cards, inputs, and error states, reducing overall development time by 40%."},
+      {"lead": "Platform architecture", "impact": "Designed a parent-and-child micro-frontend model with shared feature integration and TypeScript-first standards."},
+      {"lead": "Production reliability", "impact": "Used Sentry, Datadog, New Relic, Grafana, Firebase monitoring, and Jest to support performance, observability, and code quality."}
+    ],
+    "closing": "OpenFX's focus on shared components, micro-frontends, frontend observability, and a Banking SDK is a strong fit for my experience. I would welcome the opportunity to discuss how I can help establish these foundations and make product teams faster.",
+    "signature": {"valediction": "Sincerely,", "name": "Sneh Singh Chauhan"}
+  }
+}

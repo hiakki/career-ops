@@ -1,0 +1,14 @@
+{
+  "date": "2026-09-08",
+  "state": "filled",
+  "fieldValues": [
+    {"field": "Name", "value": "Sneh Singh Chauhan"},
+    {"field": "Email", "value": "wrk.sneh@gmail.com"},
+    {"field": "Phone number", "value": "+91-6386418829"},
+    {"field": "GitHub URL", "value": "https://github.com/hiSneh"},
+    {"field": "LinkedIn URL", "value": "https://linkedin.com/in/hiSneh"}
+  ],
+  "files": [
+    {"field": "Resume", "path": "output/Sneh_Singh_Chauhan_Senior_Frontend_Engineer.pdf", "version": "Ashby upload verified"}
+  ]
+}

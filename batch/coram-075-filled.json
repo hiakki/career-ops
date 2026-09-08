@@ -1,0 +1,17 @@
+{
+  "date": "2026-09-08",
+  "state": "filled",
+  "selections": [
+    {"field": "Able and willing to work full-time onsite", "selection": "Yes"}
+  ],
+  "fieldValues": [
+    {"field": "Name", "value": "Sneh Singh Chauhan"},
+    {"field": "Phone number", "value": "+91-6386418829"},
+    {"field": "Email", "value": "wrk.sneh@gmail.com"},
+    {"field": "Location", "value": "Bengaluru, Karnataka, India"},
+    {"field": "LinkedIn", "value": "https://linkedin.com/in/hiSneh"}
+  ],
+  "files": [
+    {"field": "Resume", "path": "output/Sneh_Singh_Chauhan_Senior_Frontend_Engineer.pdf", "version": "Ashby upload verified"}
+  ]
+}

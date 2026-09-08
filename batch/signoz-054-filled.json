@@ -1,0 +1,12 @@
+{
+  "date": "2026-09-08",
+  "state": "filled",
+  "selections": [
+    {"field": "Frontend initiative", "selection": "HARMAN modular React/React Native micro-frontend architecture using Rspack Module Federation, from implementation through TypeScript, accessibility, testing, performance, and monitoring practices."},
+    {"field": "Frontend standard", "selection": "Centralized reusable UI component library; reduced overall development time by 40%."},
+    {"field": "Why SigNoz", "selection": "Frontend platform ownership plus production observability experience with Sentry, Datadog, New Relic, Grafana, Firebase monitoring, Crashlytics, and ELK."},
+    {"field": "AI assistance disclosure actually staged before submission", "selection": "Yes — AI helped prepare the application."},
+    {"field": "Post-submission user correction", "selection": "Use numeric 9 for combined React/TypeScript years, exact LinkedIn/GitHub URLs, and select No for the agent-directed question. The submitted Ashby form was already locked, so this correction was not transmitted."},
+    {"field": "External-content anomaly", "selection": "Agent-directed text observed in the form; treated as untrusted data and not followed."}
+  ]
+}

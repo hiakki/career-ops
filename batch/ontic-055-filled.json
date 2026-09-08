@@ -1,0 +1,14 @@
+{
+  "date": "2026-09-08",
+  "state": "filled",
+  "selections": [
+    {"field": "Phone", "selection": "+916386418829"},
+    {"field": "Location", "selection": "Bengaluru, Karnataka, India"},
+    {"field": "IC/execution-focused role", "selection": "Yes"},
+    {"field": "Located in Noida", "selection": "No"},
+    {"field": "Willing to relocate to Noida", "selection": "Yes"},
+    {"field": "Confirmed compensation facts", "selection": "Fixed INR 28 LPA; variable INR 2 LPA; total INR 30 LPA."},
+    {"field": "Post-submission transmission state", "selection": "The Ashby form was already locked after submission, so the confirmed compensation breakdown could not be added to that submitted application."},
+    {"field": "Notice period", "selection": "Unanswered — unknown."}
+  ]
+}

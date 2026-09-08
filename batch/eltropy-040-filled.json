@@ -1,0 +1,17 @@
+{
+  "date": "2026-09-08",
+  "state": "filled",
+  "selections": [
+    {"field": "Phone country", "selection": "India (+91)"}
+  ],
+  "fieldValues": [
+    {"field": "First name", "value": "Sneh Singh"},
+    {"field": "Last name", "value": "Chauhan"},
+    {"field": "Email", "value": "wrk.sneh@gmail.com"},
+    {"field": "Phone", "value": "6386418829"},
+    {"field": "LinkedIn Profile", "value": "https://linkedin.com/in/hiSneh"}
+  ],
+  "files": [
+    {"field": "Resume", "path": "output/Sneh_Singh_Chauhan_Senior_Frontend_Engineer.pdf", "version": "Greenhouse upload verified"}
+  ]
+}

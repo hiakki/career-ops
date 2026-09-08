@@ -1,0 +1,13 @@
+{
+  "date": "2026-09-08",
+  "state": "submitted",
+  "fieldValues": [
+    {"field": "Full name", "value": "Sneh Singh Chauhan"},
+    {"field": "Email", "value": "wrk.sneh@gmail.com"},
+    {"field": "Phone country code", "value": "India (+91)"},
+    {"field": "Mobile phone number", "value": "6386418829"}
+  ],
+  "files": [
+    {"field": "Resume", "path": "output/Sneh_Singh_Chauhan_Senior_Frontend_Engineer.pdf", "version": "LinkedIn upload verified on submission review"}
+  ]
+}

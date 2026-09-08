@@ -1,0 +1,19 @@
+{
+  "date": "2026-09-08",
+  "state": "submitted",
+  "selections": [
+    {"field": "Phone country", "selection": "India (+91)"}
+  ],
+  "fieldValues": [
+    {"field": "First name", "value": "Sneh Singh"},
+    {"field": "Last name", "value": "Chauhan"},
+    {"field": "Email", "value": "wrk.sneh@gmail.com"},
+    {"field": "Phone national number", "value": "6386418829"},
+    {"field": "Location", "value": "Bengaluru, Karnataka, India"},
+    {"field": "LinkedIn", "value": "https://linkedin.com/in/hiSneh"},
+    {"field": "Website", "value": "https://github.com/hiSneh"}
+  ],
+  "files": [
+    {"field": "Resume", "path": "output/Sneh_Singh_Chauhan_Staff_Frontend_Engineer_Arcana_Analytics.pdf", "version": "Greenhouse upload verified"}
+  ]
+}

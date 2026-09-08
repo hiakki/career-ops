@@ -1,0 +1,28 @@
+- generic [active] [ref=f5e1]:
+  - generic [ref=f5e4]:
+    - img "Assembly Logo" [ref=f5e6]
+    - generic [ref=f5e7]:
+      - paragraph [ref=f5e8]: Senior Frontend Engineer
+      - paragraph [ref=f5e9]:
+        - generic "Location" [ref=f5e10]
+        - text: 43, Residency Rd, Srinivas Nagar, Shanthala Nagar, Ashok Nagar, Bengaluru, Karnataka 560025, India
+        - generic "Employees can work remotely" [ref=f5e13]
+  - generic [ref=f5e19]:
+    - generic:
+      - generic:
+        - generic [ref=f5e23]:
+          - banner:
+            - heading "Senior Frontend Engineer" [level=1] [ref=f5e24]
+          - main [ref=f5e25]:
+            - generic [ref=f5e26]:
+              - generic [ref=f5e27]
+              - button "Submit" [ref=f5e354] [cursor=pointer]
+          - generic [ref=f5e359]:
+            - generic [ref=f5e361]:
+              - paragraph [ref=f5e362]: powered by
+              - img "SmartRecruiters - Logo" [ref=f5e363]
+            - button "Cookie Settings" [ref=f5e364] [cursor=pointer]
+        - generic:
+          - generic:
+            - status
+            - alert

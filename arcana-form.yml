@@ -1,0 +1,89 @@
+- generic [active] [ref=f27e188]:
+  - main [ref=f27e189]:
+    - generic [ref=f27e190]:
+      - img "Arcana Analytics Logo" [ref=f27e192]
+      - generic [ref=f27e193]:
+        - link "Back to jobs" [ref=f27e194] [cursor=pointer]:
+          - /url: https://job-boards.greenhouse.io/arcanaanalytics
+        - generic [ref=f27e198]:
+          - generic [ref=f27e199]:
+            - heading "Staff Frontend Engineer" [level=1] [ref=f27e200]
+            - generic [ref=f27e201]: Bangalore, Hybrid
+          - button "Apply" [ref=f27e205] [cursor=pointer]
+        - generic [ref=f27e212]:
+          - generic [ref=f27e213]: Join our dynamic team at the forefront of cutting-edge technology as we seek a seasoned Senior Frontend Engineer. Embark on a journey where your deep-rooted expertise in computer science fundamentals, alongside an intricate understanding of data structures, algorithms, and system design, becomes the cornerstone of innovative solutions. This pivotal role not only demands your proficiency in developing and elevating compute and I/O-intensive applications but also ensures their peak performance and unwavering reliability.
+          - generic [ref=f27e228]:
+            - paragraph [ref=f27e229]:
+              - strong [ref=f27e230]: "Responsibilities:"
+            - list [ref=f27e231]:
+              - listitem [ref=f27e232]: "Front-End Excellence: This role demands deep expertise in React, requiring you to harness its full potential to architect and build innovative, user-centric web interfaces."
+              - listitem [ref=f27e233]: "Innovative Collaboration: Partner with our Product Management (PM) and Design teams to meticulously define feature specifications, leveraging leading frameworks such as React to craft exceptional products."
+              - listitem [ref=f27e234]: "Performance Optimisation: Elevate the quality, efficiency, and performance of UI and infrastructure application code through rigorous analysis and optimization."
+              - listitem [ref=f27e235]: "Backend Integration: Architect and develop backend API servers that communicate with our data infrastructure, ensuring seamless data delivery through the Arcana UI."
+              - listitem [ref=f27e236]: "System Scalability: Drive enhancements in efficiency, scalability, and stability across various system resources, setting new benchmarks in performance."
+              - listitem [ref=f27e237]: "Technical Communication: Articulate complex features and systems with precision, enhancing team understanding and collaboration."
+              - listitem [ref=f27e238]: "Ownership and Expertise: Assume responsibility for significant components, features, or systems, demonstrating an expert-level, end-to-end understanding and consistently delivering on major projects with high productivity."
+            - paragraph [ref=f27e239]:
+              - strong [ref=f27e240]: "Requirements:"
+            - list [ref=f27e241]:
+              - listitem [ref=f27e242]: Bachelor's degree in Computer Science, Computer Engineering, relevant technical field, or equivalent practical experience.
+              - listitem [ref=f27e243]: At least 8 years of experience with modern front-end and back-end systems and a solid background in object-oriented software development.
+              - listitem [ref=f27e244]: Advanced skills in HTML, CSS, JS, and frameworks like React.
+              - listitem [ref=f27e245]: A keen interest in exploring new technologies to address customer needs, coupled with the creative freedom to propose innovative solutions.
+              - listitem [ref=f27e246]: Previous product development experience or a strong desire to understand and contribute to the holistic product vision.
+      - separator [ref=f27e262]
+      - generic [ref=f27e263]:
+        - generic [ref=f27e265]:
+          - heading "Apply for this job" [level=2] [ref=f27e267]
+          - generic [ref=f27e268]:
+            - paragraph [ref=f27e270]: "*"
+            - paragraph [ref=f27e271]: indicates a required field
+        - generic [ref=f27e272]:
+          - generic [ref=f27e273]:
+            - generic [ref=f27e276]:
+              - generic [ref=f27e277]: First Name*
+              - textbox "First Name" [ref=f27e278]
+            - generic [ref=f27e281]:
+              - generic [ref=f27e282]: Last Name*
+              - textbox "Last Name" [ref=f27e283]
+            - generic [ref=f27e286]:
+              - generic [ref=f27e287]: Email*
+              - textbox "Email" [ref=f27e288]
+            - group "Phone" [ref=f27e290]:
+              - generic [ref=f27e294]:
+                - generic [ref=f27e295]: Country*
+                - generic [ref=f27e296]
+              - generic [ref=f27e310]:
+                - generic [ref=f27e311]: Phone*
+                - textbox "Phone" [ref=f27e313]
+            - generic [ref=f27e314]:
+              - generic [ref=f27e316]:
+                - generic [ref=f27e317]: Location (City)*
+                - generic [ref=f27e318]
+              - button "Locate me" [ref=f27e326] [cursor=pointer]
+            - group "Resume/CV*" [ref=f27e328]:
+              - generic [ref=f27e331]:
+                - generic [ref=f27e333]
+                - button "Dropbox" [ref=f27e338] [cursor=pointer]
+                - button "Google Drive" [ref=f27e340] [cursor=pointer]
+                - generic [ref=f27e342]
+                - paragraph [ref=f27e345]: "Accepted file types: pdf, doc, docx, txt, rtf"
+          - generic [ref=f27e346]:
+            - separator [ref=f27e347]
+            - generic [ref=f27e350]:
+              - generic [ref=f27e351]: LinkedIn Profile*
+              - textbox "LinkedIn Profile" [ref=f27e352]
+            - generic [ref=f27e355]:
+              - generic [ref=f27e356]: Website
+              - textbox "Website" [ref=f27e357]
+          - button "Submit application" [ref=f27e359] [cursor=pointer]
+  - contentinfo [ref=f27e360]:
+    - generic [ref=f27e361]:
+      - paragraph [ref=f27e362]: Powered by
+      - link [ref=f27e363] [cursor=pointer]:
+        - /url: https://www.greenhouse.com
+        - img "Greenhouse logo" [ref=f27e364]
+  - iframe [ref=f27e378]:
+    - generic [ref=f28e6]:
+      - text: protected by
+      - strong [ref=f28e7]: reCAPTCHA

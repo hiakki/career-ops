@@ -1,0 +1,132 @@
+- generic [ref=f8e1]:
+  - img "Banner" [ref=f8e3]
+  - main [ref=f8e4]:
+    - generic [ref=f8e5]:
+      - img "Eltropy Inc. Logo" [ref=f8e7]
+      - generic [ref=f8e8]:
+        - link "Back to jobs" [ref=f8e9] [cursor=pointer]:
+          - /url: https://job-boards.greenhouse.io/eltropyinc
+        - generic [ref=f8e13]:
+          - generic [ref=f8e14]:
+            - heading "Senior Frontend Engineer" [level=1] [ref=f8e15]
+            - generic [ref=f8e16]: India
+          - button "Apply" [ref=f8e20] [cursor=pointer]
+        - generic [ref=f8e22]:
+          - paragraph [ref=f8e23]
+          - paragraph [ref=f8e24]:
+            - strong [ref=f8e25]: 100% Remote | Senior Frontend Engineer | Fintech SaaS Firm
+          - paragraph [ref=f8e26]
+          - paragraph [ref=f8e27]:
+            - strong [ref=f8e28]: About the Role
+          - paragraph [ref=f8e29]:
+            - text: We’re looking for a
+            - strong [ref=f8e30]: Senior Frontend Engineer
+            - text: to build and maintain scalable, high-performance user interfaces for our communication platform. You’ll work closely with backend engineers, designers, and product managers to deliver exceptional user experiences while keeping performance, maintainability, and scalability at the core.
+          - paragraph [ref=f8e31]
+          - paragraph [ref=f8e32]:
+            - strong [ref=f8e33]: What You’ll Do
+          - list [ref=f8e34]:
+            - listitem [ref=f8e35]: Develop and maintain responsive UIs using React JS, TypeScript, JavaScript, HTML5, and CSS.
+            - listitem [ref=f8e36]: Collaborate with cross-functional teams to design and deliver high-quality features.
+            - listitem [ref=f8e37]: Write clean, maintainable, and well-documented code.
+            - listitem [ref=f8e38]: Optimize performance with caching and other best practices.
+            - listitem [ref=f8e39]: Review code, mentor peers, and uphold coding standards.
+            - listitem [ref=f8e40]: Debug and troubleshoot production issues promptly.
+            - listitem [ref=f8e41]: Stay current with frontend trends and bring innovative ideas to the team.
+          - paragraph [ref=f8e42]
+          - paragraph [ref=f8e43]:
+            - strong [ref=f8e44]: "Job qualifications:"
+          - list [ref=f8e45]:
+            - listitem [ref=f8e46]: 3–8 years’ experience in web development with a focus on scalability.
+            - listitem [ref=f8e47]: Expert in React JS, JavaScript, TypeScript, HTML5, and CSS.
+            - listitem [ref=f8e48]: Strong grasp of responsive design, performance optimization, and client-side session management.
+            - listitem [ref=f8e49]: Familiarity with Git, CI/CD, and distributed development.
+            - listitem [ref=f8e50]: Excellent problem-solving and collaboration skills.
+          - paragraph [ref=f8e51]
+          - paragraph [ref=f8e52]:
+            - strong [ref=f8e53]: Preferred/Bonus Skills
+          - list [ref=f8e54]:
+            - listitem [ref=f8e55]:
+              - text: Experience with
+              - strong [ref=f8e56]: React Native
+              - text: or other mobile development frameworks.
+            - listitem [ref=f8e57]: Familiarity with state management libraries like Redux or Zustand.
+            - listitem [ref=f8e58]: Experience with modern build tools such as Webpack or Vite.
+            - listitem [ref=f8e59]: A strong portfolio or active GitHub profile showcasing previous work.
+          - paragraph [ref=f8e60]
+          - paragraph [ref=f8e61]:
+            - strong [ref=f8e62]: Why Join Eltropy?
+          - list [ref=f8e63]:
+            - listitem [ref=f8e64]: Join a high-impact team building mission-critical backend systems for financial institutions.
+            - listitem [ref=f8e65]: Work on modern technology stacks in a fast-growing SaaS company.
+            - listitem [ref=f8e66]: 100% remote work with a collaborative, engineering-led culture.
+            - listitem [ref=f8e67]: Opportunity to own and influence core backend architecture.
+          - paragraph [ref=f8e68]
+          - paragraph [ref=f8e69]:
+            - strong [ref=f8e70]: About Eltropy
+          - paragraph [ref=f8e71]: Eltropy is a rocket ship FinTech on a mission to disrupt the way people access financial services. Eltropy enables financial institutions to digitally engage in a secure and compliant way. Using our world-class digital communications platform, community financial institutions can improve operations, engagement, and productivity. CFIs (Community Banks and Credit Unions) use Eltropy to communicate with consumers via Text, Video, Secure Chat, co-browsing, screen sharing, and chatbot technology, all integrated into a single platform bolstered by AI, skill-based routing, and other contact center capabilities.
+          - paragraph [ref=f8e72]
+          - paragraph [ref=f8e73]:
+            - strong [ref=f8e74]: Eltropy Values
+          - list [ref=f8e75]:
+            - listitem [ref=f8e76]: Customers are our North Star
+            - listitem [ref=f8e77]: No Fear – Tell the Truth
+            - listitem [ref=f8e78]: Team of Owners
+          - paragraph [ref=f8e79]
+          - paragraph [ref=f8e80]: Eltropy is an equal opportunity employer. All applicants will be considered for employment without attention to race, color, religion, sex, sexual orientation, gender identity, national origin, veteran, or disability status.
+          - paragraph [ref=f8e81]
+        - generic [ref=f8e85]:
+          - paragraph [ref=f8e86]: Create a Job Alert
+          - paragraph [ref=f8e87]: Interested in building your career at Eltropy Inc.? Get future opportunities sent straight to your email.
+          - link "Create alert" [ref=f8e88] [cursor=pointer]:
+            - /url: https://my.greenhouse.io/users/sign_in?job_board=eltropyinc&source=job_alert_post
+      - separator [ref=f8e89]
+      - generic [ref=f8e90]:
+        - generic [ref=f8e91]:
+          - generic [ref=f8e92]:
+            - heading "Apply for this job" [level=2] [ref=f8e94]
+            - generic [ref=f8e95]:
+              - paragraph [ref=f8e97]: "*"
+              - paragraph [ref=f8e98]: indicates a required field
+          - button "Autofill my application" [ref=f8e101] [cursor=pointer]
+        - generic [ref=f8e102]:
+          - generic [ref=f8e103]:
+            - generic [ref=f8e106]:
+              - generic [ref=f8e107]: First Name*
+              - textbox "First Name" [ref=f8e108]: Sneh
+            - generic [ref=f8e111]:
+              - generic [ref=f8e112]: Last Name*
+              - textbox "Last Name" [ref=f8e113]: Singh Chauhan
+            - generic [ref=f8e116]:
+              - generic [ref=f8e117]: Preferred First Name
+              - textbox "Preferred First Name" [ref=f8e118]
+            - generic [ref=f8e121]:
+              - generic [ref=f8e122]: Email*
+              - textbox "Email" [ref=f8e123]: wrk.sneh@gmail.com
+            - group "Phone" [ref=f8e125]:
+              - generic [ref=f8e129]:
+                - generic [ref=f8e130]: Country
+                - generic [ref=f8e131]
+              - generic [ref=f8e145]:
+                - generic [ref=f8e146]: Phone
+                - textbox "Phone" [ref=f8e148]: "6386418829"
+            - group "Resume/CV" [ref=f8e150]:
+              - generic [ref=f8e196]:
+                - paragraph [ref=f8e201]: Sneh_Singh_Chauhan_Senior_Frontend_Engineer_Eltropy.pdf
+                - button "Remove file" [ref=f8e202] [cursor=pointer]
+          - generic [ref=f8e168]:
+            - separator [ref=f8e169]
+            - generic [ref=f8e172]:
+              - generic [ref=f8e173]: LinkedIn Profile
+              - textbox "LinkedIn Profile" [active] [ref=f8e174]: https://linkedin.com/in/hiSneh
+          - button "Submit application" [ref=f8e176] [cursor=pointer]
+  - contentinfo [ref=f8e177]:
+    - generic [ref=f8e178]:
+      - paragraph [ref=f8e179]: Powered by
+      - link [ref=f8e180] [cursor=pointer]:
+        - /url: https://www.greenhouse.com
+        - img "Greenhouse logo" [ref=f8e181]
+  - iframe [ref=f8e195]:
+    - generic [ref=f9e6]:
+      - text: protected by
+      - strong [ref=f9e7]: reCAPTCHA

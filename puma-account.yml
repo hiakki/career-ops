@@ -1,0 +1,102 @@
+- generic [ref=f26e4]:
+  - link "Skip to main content" [ref=f26e5] [cursor=pointer]:
+    - /url: ""
+  - banner [ref=f26e8]:
+    - generic [ref=f26e10]:
+      - link "careers home" [ref=f26e13] [cursor=pointer]:
+        - /url: https://about.puma.com/en/careers
+        - img "careers home" [ref=f26e14]
+      - heading "Join the PUMA Team!" [level=1] [ref=f26e16]
+      - generic [ref=f26e18]:
+        - generic [ref=f26e19]:
+          - button "English" [ref=f26e21] [cursor=pointer]
+          - button "Sign In" [ref=f26e27] [cursor=pointer]
+        - navigation [ref=f26e33]:
+          - button "Careers at PUMA" [ref=f26e34] [cursor=pointer]
+  - main [ref=f26e96]:
+    - generic [ref=f26e97]:
+      - generic [ref=f26e98]:
+        - link "Back to Job Posting" [ref=f26e100] [cursor=pointer]
+        - heading "The Lead Engineer (Mobile) - Consumer Experience Engineering" [level=2] [ref=f26e105]
+      - generic "Application Progress" [ref=f26e106]:
+        - list [ref=f26e107]:
+          - listitem [ref=f26e108]:
+            - generic: current step 1 of 7
+            - generic [ref=f26e114]: Create Account/Sign In
+          - listitem [ref=f26e115]:
+            - generic: step 2 of 7
+            - generic [ref=f26e121]: Autofill with Resume
+          - listitem [ref=f26e122]:
+            - generic: step 3 of 7
+            - generic [ref=f26e128]: My Information
+          - listitem [ref=f26e129]:
+            - generic: step 4 of 7
+            - generic [ref=f26e135]: My Experience
+          - listitem [ref=f26e136]:
+            - generic: step 5 of 7
+            - generic [ref=f26e142]: Application Questions
+          - listitem [ref=f26e143]:
+            - generic: step 6 of 7
+            - generic [ref=f26e149]: Voluntary Disclosures
+          - listitem [ref=f26e150]:
+            - generic: step 7 of 7
+            - generic [ref=f26e156]: Review
+      - generic [ref=f26e163]:
+        - generic [ref=f26e166]:
+          - heading "Create Account" [active] [level=3] [ref=f26e167]
+          - generic [ref=f26e170]:
+            - paragraph [ref=f26e171]: "Password Requirements:"
+            - list [ref=f26e172]:
+              - listitem [ref=f26e173]: A minimum of 8 characters
+              - listitem [ref=f26e174]: A numeric character
+              - listitem [ref=f26e175]: A special character
+              - listitem [ref=f26e176]: An alphabetic character
+              - listitem [ref=f26e177]: A lowercase character
+              - listitem [ref=f26e178]: An uppercase character
+          - generic [ref=f26e179]:
+            - generic [ref=f26e180]:
+              - generic [ref=f26e181]: Email Address*
+              - textbox "Email Address" [ref=f26e185]
+            - generic [ref=f26e187]:
+              - generic [ref=f26e188]: Password*
+              - textbox "Password" [ref=f26e192]
+            - generic [ref=f26e193]:
+              - generic [ref=f26e194]: Verify New Password*
+              - textbox "Verify New Password" [ref=f26e198]
+            - generic [ref=f26e203]:
+              - heading "By creating a Candidate Account, you confirm that you have been taken notice (depending on the role you apply to) of:" [level=3] [ref=f26e204]
+              - list [ref=f26e205]
+              - paragraph [ref=f26e212]
+            - generic [ref=f26e217]:
+              - checkbox "Yes, I have read and consent to the PUMA's Data Privacy Policy and or stichd Data Privacy Policy" [ref=f26e219] [cursor=pointer]
+              - generic [ref=f26e220] [cursor=pointer]: Yes, I have read and consent to the PUMA's Data Privacy Policy and or stichd Data Privacy Policy
+            - generic [ref=f26e225]:
+              - button "Create Account" [ref=f26e226] [cursor=pointer]
+              - button [aria-hidden] [ref=f26e227] [cursor=pointer]: Create Account
+          - generic [ref=f26e228]:
+            - text: Already have an account?
+            - button "Sign In" [ref=f26e229] [cursor=pointer]
+          - button "Forgot your password?" [ref=f26e231] [cursor=pointer]
+        - generic:
+          - generic:
+            - generic [ref=f26e232]: Enter website. This input is for robots only, do not enter if you're human.
+            - textbox "Enter website. This input is for robots only, do not enter if you're human." [ref=f26e233]
+  - generic [ref=f26e40]:
+    - heading "Follow Us" [level=4] [ref=f26e41]
+    - list [ref=f26e42]:
+      - listitem [ref=f26e43] [cursor=pointer]:
+        - link "Glassdoor" [ref=f26e44]:
+          - /url: https://www.glassdoor.com/Overview/Working-at-PUMA-Group-EI_IE10474.11,21.htm
+      - listitem [ref=f26e49] [cursor=pointer]:
+        - link "YouTube" [ref=f26e50]:
+          - /url: https://www.youtube.com/c/PUMAGroup
+      - listitem [ref=f26e56] [cursor=pointer]:
+        - link "Facebook" [ref=f26e57]:
+          - /url: https://www.facebook.com/PUMAGroup/
+      - listitem [ref=f26e61] [cursor=pointer]:
+        - link "X" [ref=f26e62]:
+          - /url: https://twitter.com/PUMAGroup
+      - listitem [ref=f26e66] [cursor=pointer]:
+        - link "LinkedIn" [ref=f26e67]:
+          - /url: https://www.linkedin.com/company/puma
+    - generic [ref=f26e71]: © 2026 Workday, Inc. All rights reserved.
