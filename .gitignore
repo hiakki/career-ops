@@ -200,3 +200,13 @@ documents/*
 # Intake fingerprints — the recorded source filenames may themselves carry
 # PII (e.g. cv/jane-doe-master-cv.pdf). #1723
 data/intake-state.json
+
+# Local AI setup. Existing tracked upstream instructions remain tracked.
+.claude/
+.codex/
+.agents/
+agency-agents*.json
+AGENTS.local.md
+CLAUDE.local.md
+.codebase-memory/
+.graft/
