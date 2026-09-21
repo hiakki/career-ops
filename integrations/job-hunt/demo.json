@@ -1,0 +1,7 @@
+[
+  { "id": "fresh", "publishedAt": "2026-09-19T06:00:00Z", "dateKind": "published", "dateSourceUrl": "https://example.com/jobs/1", "score": 4.2, "status": "Evaluated" },
+  { "id": "backfill", "publishedAt": "2026-09-17T12:00:00Z", "dateKind": "published", "dateSourceUrl": "https://example.com/jobs/2" },
+  { "id": "old-but-newly-indexed", "publishedAt": "2026-08-01T12:00:00Z", "indexedAt": "2026-09-19T11:00:00Z", "dateKind": "published", "dateSourceUrl": "https://example.com/jobs/3" },
+  { "id": "unknown-date", "indexedAt": "2026-09-19T11:00:00Z" },
+  { "id": "fresh-but-ineligible", "publishedAt": "2026-09-19T06:00:00Z", "dateKind": "published", "dateSourceUrl": "https://example.com/jobs/5", "eligibility": "blocked", "reason": "Synthetic fixture: location mismatch" }
+]
