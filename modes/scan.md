@@ -2,6 +2,17 @@
 
 Scans configured job portals, filters by title relevance, and adds new offers to the pipeline for subsequent evaluation.
 
+## Optional Laya ranking after discovery
+
+When the user requests Laya screening, or explicitly sets
+`CAREER_OPS_RANK_PROVIDER=laya` for this agent process, run
+`node rank-pipeline.mjs --provider laya --limit 20` after the scan completes.
+See `docs/LAYA.md` for server configuration. The scanner itself remains
+deterministic; this is a separate, optional network step. Summarize annotations
+and failures. Laya never removes jobs or authorizes full evaluations/applications.
+Missing configuration or failed predictions leave the queue available for normal
+host review; report the error rather than silently switching providers.
+
 > **Note (v1.6+):** The default scanner (`scan.mjs` / `npm run scan`) is **zero-token** and uses structured sources: local parsers configured per company and public Greenhouse, Ashby, and Lever APIs. The levels with Playwright/WebSearch described below represent the **agent** workflow (executed by the AI agent), not what `scan.mjs` does. If a company does not have a local parser or a Greenhouse/Ashby/Lever API, `scan.mjs` will ignore it; in those cases, the agent must manually complete Level 1 (Playwright) or Level 3 (WebSearch).
 >
 > **Rule (v1.8+):** If a company's local parser completes successfully in Level 0, the agent **must not** repeat that company in Playwright (Level 1) or API (Level 2). In Level 3, general queries remain active, but results from companies already covered by a parser are discarded. See [Rule: Successful Local Parser](#rule-successful-local-parser--no-expensive-scraping-repetition).

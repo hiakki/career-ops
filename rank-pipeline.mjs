@@ -16,9 +16,8 @@
  * annotated are eligible, `--limit` caps how many are ranked per run (default 20,
  * hard ceiling 200), and a summary prints at the end.
  *
- * The work is done by whichever agent CLI you already have installed (the same
- * headless runners AGENTS.md documents) — no API key, no new dependency, and no
- * new network endpoint.
+ * Default: use an installed agent CLI. Optional --provider laya uses an explicit
+ * HTTPS endpoint/token and compact target-role metadata, not the CV.
  *
  * Usage:
  *   node rank-pipeline.mjs                     # rank up to --limit pending entries
@@ -26,6 +25,7 @@
  *   node rank-pipeline.mjs --cli codex         # override CLI auto-detection
  *   node rank-pipeline.mjs --model <name>      # passed through when the CLI takes one
  *   node rank-pipeline.mjs --dry-run           # print what would be written
+ *   node rank-pipeline.mjs --provider laya     # optional remote metadata ranking
  *   node rank-pipeline.mjs --self-test         # in-memory suite; spawns no subprocess
  */
 
@@ -33,7 +33,9 @@ import { readFileSync, writeFileSync, existsSync } from 'fs';
 import { execFileSync } from 'child_process';
 import { dirname, join } from 'path';
 import { fileURLToPath } from 'url';
-import { flagValue, hasFlag } from './lib/cli-flags.mjs';
+import { flagValue, hasFlag, validateFlags } from './lib/cli-flags.mjs';
+import { load as loadYaml } from 'js-yaml';
+import { readLayaConfig, rankWithLaya } from './lib/laya-ranker.mjs';
 import { sanitizeMarkdownField } from './scan.mjs';
 import { withPipelineLock } from './pipeline-lock.mjs';
 import { isMainModule } from './lib/is-main-module.mjs';
@@ -68,12 +70,18 @@ const USAGE = `
   rank-pipeline.mjs — opt-in LLM relevance re-ranker (annotates, never filters)
 
   node rank-pipeline.mjs [--limit N] [--cli <name>] [--model <name>] [--dry-run]
+  node rank-pipeline.mjs --provider laya [--limit N] [--dry-run]
 
     --limit N     max entries to rank this run (default ${DEFAULT_LIMIT}, ceiling ${LIMIT_CEILING})
     --cli <name>  force a CLI instead of auto-detecting
     --model <n>   passed through to the CLI when it accepts one
-    --dry-run     print the annotations, write nothing
+    --provider    cli (default) or laya; overrides CAREER_OPS_RANK_PROVIDER
+    --dry-run     call the selected provider and print annotations, write nothing
     --self-test   run the in-memory suite (no subprocess, no network)
+
+  Laya: export LAYA_ENDPOINT and LAYA_API_TOKEN. Optional LAYA_TIMEOUT_MS=15000.
+  Reads target_roles from config/profile.yml in the data root.
+  Advisory title ranking only; no CV/JD/location evaluation or automatic rejection.
 `;
 
 /**
@@ -106,6 +114,10 @@ export function parsePendingEntries(text) {
     if (!raw.startsWith('- [ ] ')) return;
     if (raw.includes(RANK_LABEL)) return;
     const cells = raw.slice(6).split('|').map(c => c.trim());
+    // Labeled metadata can follow even a bare URL; never mistake a note/rank
+    // segment for the company, title, or positional location.
+    const metadata = cells.findIndex((cell, i) => i > 0 && /^(?:posted|trust|note|rank):/i.test(cell));
+    if (metadata !== -1) cells.splice(metadata);
     out.push({
       index,
       raw,
@@ -245,6 +257,8 @@ function callCli(cli, prompt, model) {
 }
 
 async function main(args) {
+  validateFlags(args, ['--help', '-h', '--limit', '--cli', '--model', '--provider', '--dry-run', '--self-test'], USAGE,
+    { valueFlags: ['--limit', '--cli', '--model', '--provider'], requireOperand: true });
   if (hasFlag(args, '--help') || hasFlag(args, '-h')) {
     console.log(USAGE);
     return 0;
@@ -258,11 +272,16 @@ async function main(args) {
   const limit = flagValue(args, '--limit') ?? DEFAULT_LIMIT;
   const model = flagValue(args, '--model');
   const forced = flagValue(args, '--cli') ?? process.env.CAREER_OPS_RANK_CLI;
+  const provider = flagValue(args, '--provider') ?? process.env.CAREER_OPS_RANK_PROVIDER ?? 'cli';
+  if (!['cli', 'laya'].includes(provider)) throw new Error('Provider must be cli or laya.');
+  if (provider === 'laya' && (hasFlag(args, '--cli') || hasFlag(args, '--model'))) {
+    throw new Error('--cli and --model apply only to --provider cli.');
+  }
 
-  const cli = forced
+  const cli = provider === 'laya' ? null : forced
     ? CLI_CANDIDATES.find(c => c.bin === forced) ?? { bin: forced, args: p => ['-p', p] }
     : detectCli();
-  if (!cli) {
+  if (provider === 'cli' && !cli) {
     console.error('No supported agent CLI found (tried: %s).', CLI_CANDIDATES.map(c => c.bin).join(', '));
     console.error('Install one, or pass --cli <name>. See the Headless / Batch Mode table in AGENTS.md.');
     return 1;
@@ -274,7 +293,7 @@ async function main(args) {
     return 0;
   }
   const selected = selectBatch(pending, limit);
-  const cvExcerpt = existsSync(CV_PATH) ? readFileSync(CV_PATH, 'utf-8').slice(0, 2000) : '';
+  const cvExcerpt = provider === 'cli' && existsSync(CV_PATH) ? readFileSync(CV_PATH, 'utf-8').slice(0, 2000) : '';
 
   const started = Date.now();
   // A LIST, not a Map keyed by the row text. pipeline.md does not enforce line
@@ -287,8 +306,20 @@ async function main(args) {
   // the final summary.
   let attemptedCalls = 0;
   let skippedBatches = 0;
+  let layaFailures = 0;
 
-  for (let i = 0; i < selected.length; i += BATCH_SIZE) {
+  if (provider === 'laya') {
+    const config = readLayaConfig();
+    let profile;
+    try { profile = loadYaml(readFileSync(join(DATA_ROOT, 'config', 'profile.yml'), 'utf8')); }
+    catch { throw new Error('Laya requires a readable config/profile.yml in the Career Ops data root.'); }
+    const ranked = await rankWithLaya(selected, profile, config);
+    attemptedCalls = ranked.attemptedCalls;
+    layaFailures = ranked.failures.length;
+    for (const failure of ranked.failures) console.error(`  entry ${failure.index + 1}: ${failure.error}`);
+    for (const result of ranked.results) annotations.push({ raw: result.raw, segment: formatRankSegment(result.score, result.reason) });
+  }
+  for (let i = 0; provider === 'cli' && i < selected.length; i += BATCH_SIZE) {
     const batch = selected.slice(i, i + BATCH_SIZE);
     let response;
     attemptedCalls += 1;
@@ -318,7 +349,8 @@ async function main(args) {
   if (dryRun) {
     for (const { raw, segment } of annotations) console.log(`${raw} | ${segment}`);
     console.log(`\n  [dry-run] would annotate ${annotations.length} of ${selected.length} selected entr(ies).`);
-    return 0;
+    console.log(`  Provider: ${provider}; attempted calls: ${attemptedCalls}; elapsed: ${elapsed}s`);
+    return layaFailures ? 1 : 0;
   }
 
   let written = 0;
@@ -335,14 +367,17 @@ async function main(args) {
     });
   }
 
-  console.log(`\n  Ranked ${written} entr(ies) of ${pending.length} pending in ${attemptedCalls} CLI call(s) via ${cli.bin}.`);
+  console.log(`\n  Ranked ${written} entr(ies) of ${pending.length} pending in ${attemptedCalls} call(s) via ${provider === 'laya' ? 'laya' : cli.bin}.`);
+  if (layaFailures) console.log(`  ${layaFailures} Laya entr(ies) need host review; retained without new annotations.`);
   if (skippedBatches) console.log(`  ${skippedBatches} batch(es) skipped — those rows are un-annotated, not dropped.`);
   if (pending.length > selected.length) {
     console.log(`  ${pending.length - selected.length} pending entr(ies) not ranked this run (--limit ${selectBatch(pending, limit).length}). Re-run to continue.`);
   }
   console.log(`  Elapsed: ${elapsed}s`);
-  console.log(`  Cost: not reported by \`${cli.bin}\` in headless mode — check your CLI's own usage view.`);
-  return 0;
+  console.log(provider === 'laya'
+    ? '  Laya ranks metadata only. Infrastructure cost and full-evaluation savings are not measured here.'
+    : `  Cost: not reported by \`${cli.bin}\` in headless mode — check your CLI's own usage view.`);
+  return layaFailures ? 1 : 0;
 }
 
 // ── self-test ────────────────────────────────────────────────────────────────

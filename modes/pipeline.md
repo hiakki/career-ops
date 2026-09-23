@@ -109,6 +109,13 @@ are defined:
   row can go unranked because the CLI call failed, returned malformed JSON, or
   gave no usable reason — all of which still spent tokens.)
 
+  With `--provider laya`, the reason explicitly says `Laya` and `metadata only`.
+  That score measures title alignment using compact target-role fields,
+  not the candidate's qualifications or a full JD review. Do not use it as a
+  pre-screen rejection, auto-PDF threshold, final evaluation score, or permission
+  to mark the row processed. Preserve priority-company overrides and review
+  unranked/uncertain entries normally. Configuration: `docs/LAYA.md`.
+
 When more than one is present the order is `posted:` → `trust:` → `note:` →
 `rank:`. Treat them as hints when triaging; none changes how you process the URL.
 
