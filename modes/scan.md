@@ -2,16 +2,22 @@
 
 Scans configured job portals, filters by title relevance, and adds new offers to the pipeline for subsequent evaluation.
 
-## Optional Laya ranking after discovery
+## Optional Qwen or Laya ranking after discovery
 
-When the user requests Laya screening, or explicitly sets
-`CAREER_OPS_RANK_PROVIDER=laya` for this agent process, run
-`node rank-pipeline.mjs --provider laya --limit 20` after the scan completes.
-See `docs/LAYA.md` for server configuration. The scanner itself remains
+When the user requests Qwen/Laya ranking, or configures
+`CAREER_OPS_RANK_PROVIDER=qwen` / `laya` in the process environment or private
+data-root `.env`, run `node rank-pipeline.mjs --limit 20` after discovery (use an
+explicit `--provider qwen` or `--provider laya` for a user-requested override).
+Read only non-secret provider selection when inspecting configuration; never
+print `.env` or tokens. See `docs/QWEN_RERANKER.md` or `docs/LAYA.md`.
+The scanner itself remains
 deterministic; this is a separate, optional network step. Summarize annotations
-and failures. Laya never removes jobs or authorizes full evaluations/applications.
+and failures. These providers never remove jobs or authorize full evaluations/applications.
 Missing configuration or failed predictions leave the queue available for normal
 host review; report the error rather than silently switching providers.
+Reuse Qwen's title relevance for the requested shortlist; do not ask the host LLM
+to repeat title scoring. Full JD assessment remains a separate step, and all
+jobs outside the requested review count remain pending.
 
 > **Note (v1.6+):** The default scanner (`scan.mjs` / `npm run scan`) is **zero-token** and uses structured sources: local parsers configured per company and public Greenhouse, Ashby, and Lever APIs. The levels with Playwright/WebSearch described below represent the **agent** workflow (executed by the AI agent), not what `scan.mjs` does. If a company does not have a local parser or a Greenhouse/Ashby/Lever API, `scan.mjs` will ignore it; in those cases, the agent must manually complete Level 1 (Playwright) or Level 3 (WebSearch).
 >

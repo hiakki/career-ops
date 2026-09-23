@@ -16,6 +16,18 @@ Sweep all pending URLs in one batch with the zero-token liveness checker before 
 
 This complements — does not replace — the per-URL liveness gate in `auto-pipeline` (Step 0.5) and the `apply` preflight: the sweep drops the dead postings up front, in bulk, so the user never opens a tab or spends a token on them.
 
+## Configured Qwen title prioritization
+
+After the liveness sweep, if Qwen ranking is requested or configured through
+`CAREER_OPS_RANK_PROVIDER=qwen` (process environment or private data-root `.env`),
+run `node rank-pipeline.mjs --provider qwen --limit 20` for pending unranked titles.
+Reuse existing annotations; do not spend a Claude/Codex call repeating title
+ranking. Use raw `Qwen relevance=` when ordering a user-requested shortlist,
+while preserving priority-company overrides. Leave unselected rows pending;
+unranked/error rows need review. If the user requested processing the whole queue,
+honor that scope. This pass does not replace the JD-based pre-screen below or
+permit rejection, application submission, or fabricated candidate qualifications.
+
 ## Pre-screen gate (standard / premium tiers only)
 
 Read `spend_tier` from `config/profile.yml` (see `modes/_shared.md` -- Spend Tier section; defaults to `standard` if absent).
@@ -115,6 +127,12 @@ are defined:
   pre-screen rejection, auto-PDF threshold, final evaluation score, or permission
   to mark the row processed. Preserve priority-company overrides and review
   unranked/uncertain entries normally. Configuration: `docs/LAYA.md`.
+
+  With `--provider qwen`, the reason retains the original `Qwen relevance=` value.
+  The displayed /5 value is simply relevance multiplied by five and rounded;
+  it is not comparable to a full evaluation score or a calibrated fit probability.
+  Use the raw value to prioritize within Qwen-ranked jobs, not to compare scores
+  across providers or reject jobs. Configuration: `docs/QWEN_RERANKER.md`.
 
 When more than one is present the order is `posted:` → `trust:` → `note:` →
 `rank:`. Treat them as hints when triaging; none changes how you process the URL.

@@ -74,6 +74,8 @@ import { withPortalHealthLock } from './portal-health-lock.mjs';
 import { localToday } from './lib/local-today.mjs';
 import { printScanSummaryHeader } from './lib/scan-summary-marker.mjs';
 import { isMainModule } from './lib/is-main-module.mjs';
+import { sanitizeMarkdownField } from './lib/markdown-field.mjs';
+export { sanitizeMarkdownField };
 import { promoteKnownFragmentIdentity } from './url-key.mjs';
 
 try {
@@ -2108,12 +2110,6 @@ const MARKDOWN_ESCAPE_CHARS = {
   '[': '\\[',
   ']': '\\]',
 };
-
-export function sanitizeMarkdownField(value) {
-  return normalizeScanScalar(value)
-    .replace(/[\\[\]]/g, char => MARKDOWN_ESCAPE_CHARS[char])
-    .replace(/\|/g, '/');
-}
 
 function sanitizePipelineUrl(value) {
   return normalizeScanUrl(value)
