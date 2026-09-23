@@ -230,6 +230,7 @@ const SYSTEM_PATHS = [
   'patch-latex-content.mjs',
   'lib/ascii-fold.mjs',
   'lib/cli-flags.mjs',
+  'lib/laya-ranker.mjs',
   'lib/gemini-node-floor.mjs',
   'lib/local-today.mjs',
   'lib/placeholder-cell.mjs',
