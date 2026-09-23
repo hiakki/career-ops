@@ -22,8 +22,9 @@ export LAYA_API_TOKEN
 Use your deployed HTTPS `/predict` URL. The service must accept Bearer
 authentication and Laya's `state`/`questions` request format. For scheduled runs,
 supply these variables through your existing private service environment or
-secret manager. Never commit the token. This provider reads environment variables;
-it does not automatically load `.env` or the Mac's private Laya config.
+secret manager. Never commit the token. The ranking command also loads `.env`
+from the resolved data root without overriding existing process variables.
+It does not load the Mac's global private Laya config.
 
 Normal `CAREER_OPS_ROOT`, `CAREER_OPS_DATA_DIR` and `.career-ops-data` resolution
 applies. The script reads `data/pipeline.md` and `config/profile.yml` under that

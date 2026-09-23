@@ -16,7 +16,7 @@
  * annotated are eligible, `--limit` caps how many are ranked per run (default 20,
  * hard ceiling 200), and a summary prints at the end.
  *
- * Default: use an installed agent CLI. Optional --provider laya uses an explicit
+ * Default: use an installed agent CLI. Optional --provider laya/qwen uses an explicit
  * HTTPS endpoint/token and compact target-role metadata, not the CV.
  *
  * Usage:
@@ -26,6 +26,7 @@
  *   node rank-pipeline.mjs --model <name>      # passed through when the CLI takes one
  *   node rank-pipeline.mjs --dry-run           # print what would be written
  *   node rank-pipeline.mjs --provider laya     # optional remote metadata ranking
+ *   node rank-pipeline.mjs --provider qwen     # batched title ranking, no agent CLI
  *   node rank-pipeline.mjs --self-test         # in-memory suite; spawns no subprocess
  */
 
@@ -35,8 +36,10 @@ import { dirname, join } from 'path';
 import { fileURLToPath } from 'url';
 import { flagValue, hasFlag, validateFlags } from './lib/cli-flags.mjs';
 import { load as loadYaml } from 'js-yaml';
+import { config as loadEnv } from 'dotenv';
 import { readLayaConfig, rankWithLaya } from './lib/laya-ranker.mjs';
-import { sanitizeMarkdownField } from './scan.mjs';
+import { readQwenConfig, rankWithQwen } from './lib/qwen-ranker.mjs';
+import { sanitizeMarkdownField } from './lib/markdown-field.mjs';
 import { withPipelineLock } from './pipeline-lock.mjs';
 import { isMainModule } from './lib/is-main-module.mjs';
 import { getCareerOpsRoot } from './path-resolver.mjs';
@@ -71,15 +74,18 @@ const USAGE = `
 
   node rank-pipeline.mjs [--limit N] [--cli <name>] [--model <name>] [--dry-run]
   node rank-pipeline.mjs --provider laya [--limit N] [--dry-run]
+  node rank-pipeline.mjs --provider qwen [--limit N] [--dry-run]
 
     --limit N     max entries to rank this run (default ${DEFAULT_LIMIT}, ceiling ${LIMIT_CEILING})
     --cli <name>  force a CLI instead of auto-detecting
     --model <n>   passed through to the CLI when it accepts one
-    --provider    cli (default) or laya; overrides CAREER_OPS_RANK_PROVIDER
+    --provider    cli (default), laya or qwen; overrides CAREER_OPS_RANK_PROVIDER
     --dry-run     call the selected provider and print annotations, write nothing
     --self-test   run the in-memory suite (no subprocess, no network)
 
   Laya: export LAYA_ENDPOINT and LAYA_API_TOKEN. Optional LAYA_TIMEOUT_MS=15000.
+  Qwen: QWEN_RERANK_ENDPOINT and QWEN_RERANK_API_TOKEN. Optional QWEN_RERANK_TIMEOUT_MS=30000.
+  Loads private data-root .env; existing process environment takes precedence.
   Reads target_roles from config/profile.yml in the data root.
   Advisory title ranking only; no CV/JD/location evaluation or automatic rejection.
 `;
@@ -269,16 +275,17 @@ async function main(args) {
   }
 
   const dryRun = hasFlag(args, '--dry-run');
+  loadEnv({ path: join(DATA_ROOT, '.env'), quiet: true });
   const limit = flagValue(args, '--limit') ?? DEFAULT_LIMIT;
   const model = flagValue(args, '--model');
   const forced = flagValue(args, '--cli') ?? process.env.CAREER_OPS_RANK_CLI;
   const provider = flagValue(args, '--provider') ?? process.env.CAREER_OPS_RANK_PROVIDER ?? 'cli';
-  if (!['cli', 'laya'].includes(provider)) throw new Error('Provider must be cli or laya.');
-  if (provider === 'laya' && (hasFlag(args, '--cli') || hasFlag(args, '--model'))) {
+  if (!['cli', 'laya', 'qwen'].includes(provider)) throw new Error('Provider must be cli, laya or qwen.');
+  if (provider !== 'cli' && (hasFlag(args, '--cli') || hasFlag(args, '--model'))) {
     throw new Error('--cli and --model apply only to --provider cli.');
   }
 
-  const cli = provider === 'laya' ? null : forced
+  const cli = provider !== 'cli' ? null : forced
     ? CLI_CANDIDATES.find(c => c.bin === forced) ?? { bin: forced, args: p => ['-p', p] }
     : detectCli();
   if (provider === 'cli' && !cli) {
@@ -306,16 +313,18 @@ async function main(args) {
   // the final summary.
   let attemptedCalls = 0;
   let skippedBatches = 0;
-  let layaFailures = 0;
+  let providerFailures = 0;
+  let usageTokens = null;
 
-  if (provider === 'laya') {
-    const config = readLayaConfig();
+  if (provider !== 'cli') {
+    const config = provider === 'qwen' ? readQwenConfig() : readLayaConfig();
     let profile;
     try { profile = loadYaml(readFileSync(join(DATA_ROOT, 'config', 'profile.yml'), 'utf8')); }
-    catch { throw new Error('Laya requires a readable config/profile.yml in the Career Ops data root.'); }
-    const ranked = await rankWithLaya(selected, profile, config);
+    catch { throw new Error(`${provider} requires a readable config/profile.yml in the Career Ops data root.`); }
+    const ranked = await (provider === 'qwen' ? rankWithQwen : rankWithLaya)(selected, profile, config);
     attemptedCalls = ranked.attemptedCalls;
-    layaFailures = ranked.failures.length;
+    providerFailures = ranked.failures.length;
+    usageTokens = ranked.usageTokens ?? null;
     for (const failure of ranked.failures) console.error(`  entry ${failure.index + 1}: ${failure.error}`);
     for (const result of ranked.results) annotations.push({ raw: result.raw, segment: formatRankSegment(result.score, result.reason) });
   }
@@ -350,7 +359,8 @@ async function main(args) {
     for (const { raw, segment } of annotations) console.log(`${raw} | ${segment}`);
     console.log(`\n  [dry-run] would annotate ${annotations.length} of ${selected.length} selected entr(ies).`);
     console.log(`  Provider: ${provider}; attempted calls: ${attemptedCalls}; elapsed: ${elapsed}s`);
-    return layaFailures ? 1 : 0;
+    if (provider === 'qwen') console.log(`  Hosted CLI calls: 0; reranker tokens: ${usageTokens ?? 'not reported for all calls'}.`);
+    return providerFailures ? 1 : 0;
   }
 
   let written = 0;
@@ -367,17 +377,18 @@ async function main(args) {
     });
   }
 
-  console.log(`\n  Ranked ${written} entr(ies) of ${pending.length} pending in ${attemptedCalls} call(s) via ${provider === 'laya' ? 'laya' : cli.bin}.`);
-  if (layaFailures) console.log(`  ${layaFailures} Laya entr(ies) need host review; retained without new annotations.`);
+  console.log(`\n  Ranked ${written} entr(ies) of ${pending.length} pending in ${attemptedCalls} call(s) via ${provider !== 'cli' ? provider : cli.bin}.`);
+  if (providerFailures) console.log(`  ${providerFailures} ${provider} entr(ies) need host review; retained without new annotations.`);
   if (skippedBatches) console.log(`  ${skippedBatches} batch(es) skipped — those rows are un-annotated, not dropped.`);
   if (pending.length > selected.length) {
     console.log(`  ${pending.length - selected.length} pending entr(ies) not ranked this run (--limit ${selectBatch(pending, limit).length}). Re-run to continue.`);
   }
   console.log(`  Elapsed: ${elapsed}s`);
-  console.log(provider === 'laya'
-    ? '  Laya ranks metadata only. Infrastructure cost and full-evaluation savings are not measured here.'
+  if (provider === 'qwen') console.log(`  Hosted CLI calls: 0; reranker tokens: ${usageTokens ?? 'not reported for all calls'}.`);
+  console.log(provider !== 'cli'
+    ? `  ${provider} ranks metadata only. Infrastructure cost and full-evaluation savings are not measured here.`
     : `  Cost: not reported by \`${cli.bin}\` in headless mode — check your CLI's own usage view.`);
-  return layaFailures ? 1 : 0;
+  return providerFailures ? 1 : 0;
 }
 
 // ── self-test ────────────────────────────────────────────────────────────────
